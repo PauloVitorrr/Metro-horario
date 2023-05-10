@@ -13,24 +13,26 @@ const obj = [
     },
     {
         sentido: 'X',
-        horario: 11.30
+        horario: 14.10
     }
 ]
 
 const data = new Date();
 const horas = data.getHours();
 const minutos = data.getMinutes();
-const horasMinutos = [horas, minutos].join('.');
+const horasMinutos = [horas, minutos].join(':');
 const horasMinutosFormatados = parseFloat(horasMinutos)
+
+document.getElementById("horario").innerHTML = horasMinutos
 
 obj.forEach(index => {
     const diferenca = index.horario - horasMinutosFormatados;
     const diferencaFormatado = parseFloat(diferenca.toFixed(2))
-    // if(diferencaFormatado > index.horario && diferencaFormatado <= 15){
-    //     alert ('passou')
-    // } else {
-    //     return false
-    // }
+    if(diferencaFormatado > index.horario && diferencaFormatado <= 15){
+
+    } else {
+        return false
+    }
 })
 
 // const diferenca = index.horario - horasMinutosFormatados;
