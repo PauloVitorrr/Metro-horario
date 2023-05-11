@@ -9,7 +9,7 @@ const obj = [
     },
     {
         sentido: 'X',
-        horario: 11.17
+        horario: 11.15
     },
     {
         sentido: 'X',
@@ -23,21 +23,13 @@ const minutos = data.getMinutes();
 const horasMinutos = [horas, minutos].join(':');
 const horasMinutosFormatados = parseFloat(horasMinutos)
 
-document.getElementById("horario").innerHTML = horasMinutos
 
-obj.forEach(index => {
-    const diferenca = index.horario - horasMinutosFormatados;
-    const diferencaFormatado = parseFloat(diferenca.toFixed(2))
-    if(diferencaFormatado > index.horario && diferencaFormatado <= 15){
+document.getElementById("horario").innerHTML = horasMinutos;
 
-    } else {
-        return false
-    }
-})
+const max = obj.sort((a,b) => a.horario - b.horario)
+                .find(item => item.horario > horasMinutosFormatados);
 
-// const diferenca = index.horario - horasMinutosFormatados;
-//     const diferencaFormatado = parseFloat(diferenca.toFixed(2))
-//     console.log(diferencaFormatado)
-//     if(diferencaFormatado == 0.5 || diferencaFormatado < 0.5){
-//         alert('deu certo!')
-//     }
+const y = [max.horario].toString().replace("." , ":")
+
+document.getElementById("prox-metro").innerHTML = y;
+console.log(max)
