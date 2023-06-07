@@ -32,7 +32,7 @@ function horarioAtual(){
     
     const horasMinutos = `${horas}:${minutos.toString().padStart(2, '0')}`;
     const horasMinutosFormatados = parseFloat(horasMinutos.replace(':', '.'));
-    
+
     let proxValor = Infinity;
 
     document.getElementById("horario").innerHTML = horasMinutos;
@@ -48,13 +48,13 @@ function horarioAtual(){
     const calc2 = proxValor - horasMinutosFormatados
     const calc = parseFloat(calc2.toFixed(2))
     if(calc <= 0.15 && calc > 0.10){
-        header.classList.add('red')
+        header.classList.toggle('red')
     }
     if(calc <= 0.10 && calc >= 0.03){
-        header.classList.add('yellow')
+        header.classList.toggle('yellow')
     }
     if(calc <= 0.03 && calc >= 0.01){
-        header.classList.add('green')
+        header.classList.toggle('green')
     }
 }
 
