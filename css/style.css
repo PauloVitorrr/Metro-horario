@@ -18,14 +18,22 @@
     border: 1px solid black;
     border-radius: 30px;
 }
-header{
+.container-header{
     border: 1px solid black;
     height: 70px;
     border-radius: 26px 26px 0 0;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: #00a000;
+}
+.red{
+    background-color: red;
+}
+.yellow{
+    background-color: yellow;
+}
+.green{
+    background-color: green;
 }
 .horario-atual{
     display: flex;
